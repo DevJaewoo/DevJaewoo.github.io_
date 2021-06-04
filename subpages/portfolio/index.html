@@ -8,12 +8,16 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap">        
         <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
         <link rel="stylesheet" href="style.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="scripts/canvas.js"></script>
     </head>
     <body>
         <div class="wrap">
-            <section class="flex main" id="home">
-                <div class="greeting">
+            <section class="flex" id="home">
+                <div class="flex greeting">
                     <h1>Jaewoo's Portfolio</h1>
+                    <div class="button" dest="about">VIEW MY WORK <i class="mdi mdi-arrow-right"></i></div>
                 </div>
                 <canvas class="background"></canvas>
                 <nav class="flex">
@@ -27,13 +31,24 @@
                 </nav>
             </section>
 
-            <div class="content">
-                <section style="height: 2000px;">
+            <section class="flex" id="about">
+                <h2 class="header">ABOUT</h2>
+                <div class="flex row">
+                    <div class="flex introduce">
+                        <img src="" alt="얼굴 사진">
+                        <div class="text">
+                            <a class="highlight" href="https://www.lucoms.com/main/index.asp">대우루컴즈</a>에서 펌웨어 개발자로 재직중인 안재우입니다.<br>
+                            모든 SW 개발 분야에 관심을 갖고 있고, 현재 <span class="highlight">Front-end</span> 분야를 공부하고 있습니다.
+                        </div>
+                    </div>
+                    <div class="flex skills">
+                        <div class="skills-item">
+                            
+                        </div>
+                    </div>
+                </div>
 
-                </section>
-            </div>
+            </section>
         </div>
-
-        <script src="scripts/index.js"></script>
     </body>
 </html>
