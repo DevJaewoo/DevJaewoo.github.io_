@@ -352,7 +352,7 @@ nav .menu-item.active {
 
     background-color: #FFFFFF;
     opacity: 1;
-    transition: all 1s;
+    transition: height 1s, opacity 1s;
 }
 
 .projects-item.hide {
