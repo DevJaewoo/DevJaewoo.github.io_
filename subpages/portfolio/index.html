@@ -15,9 +15,8 @@
         <script src="scripts/canvas.js"></script>
     </head>
     <body>
-        <div id="screen-block">
+        <div id="screen-block"></div>
 
-        </div>
         <div class="flex wrap">
             <!-- Home -->
             <section class="flex" id="home">
@@ -246,16 +245,21 @@
             <section class="flex" id="contact">
                 <h2 class="header">CONTACT</h2>
                 <div class="flex container">
-                    <form id="form-send" class="flex" method="POST" action="#">
+                    <form id="form-send" class="flex" method="POST">
                         <input class="form-item" type="text" placeholder="Name" name="name">
                         <input class="form-item" type="email" placeholder="Email" name="email">
                         <input class="form-item" type="text" placeholder="Title" name="title">
                         <textarea class="form-item" placeholder="Message" name="message"></textarea>
-                        <button class="btn-submit" type="submit" form="form-send">Send Message</button>
+                        <button class="btn-submit" type="reset" form="form-send" onclick="sendMessage();">Send Message</button>
                     </form>
                 </div>
             </section>
         </div>
+        
         <script src="scripts/index.js"></script>
+
+        <div id="preload">
+            <img src="images/background4.jpg" onload="disableScreenBlock();">
+        </div>
     </body>
 </html>

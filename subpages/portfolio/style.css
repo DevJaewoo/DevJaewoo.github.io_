@@ -78,6 +78,10 @@ body {
     visibility: hidden;
 }
 
+#preload {
+    display: none;
+}
+
 /* main */
 .greeting h1 {
     margin-bottom: 30px;
