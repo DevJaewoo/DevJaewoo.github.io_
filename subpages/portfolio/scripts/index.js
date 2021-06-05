@@ -1,4 +1,14 @@
 $(document).ready(function () {
+	
+	var pos = $(window).scrollTop();
+
+	if(pos == 0) {
+		$("#screen-block").addClass("hide");
+	}
+	else {
+		$("#screen-block").css({"display": "none"});
+	}
+
 	var bars = document.getElementsByClassName("bar");
 
 	for (var i = 0; i < bars.length; i++) {
