@@ -5,7 +5,9 @@
 
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap">        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
         <link rel="stylesheet" href="style.css">
 
@@ -13,42 +15,244 @@
         <script src="scripts/canvas.js"></script>
     </head>
     <body>
-        <div class="wrap">
+        <div class="flex wrap">
+            <!-- Home -->
             <section class="flex" id="home">
                 <div class="flex greeting">
                     <h1>Jaewoo's Portfolio</h1>
-                    <div class="button" dest="about">VIEW MY WORK <i class="mdi mdi-arrow-right"></i></div>
+                    <div class="button page-link" dest="about">VIEW MY WORK <i class="mdi mdi-arrow-right"></i></div>
                 </div>
                 <canvas class="background"></canvas>
                 <nav class="flex">
-                    <div class="menu">
-                        <div class="menu-item" dest="home">HOME</div>
-                        <div class="menu-item">ABOUT</div>
-                        <div class="menu-item">STRENGTH</div>
-                        <div class="menu-item">PROJECTS</div>
-                        <div class="menu-item">CONTACT</div>
+                    <div class="flex row menu wrapper">
+                        <div class="menu-item page-link" dest="home">HOME</div>
+                        <div class="menu-item page-link" dest="about">ABOUT</div>
+                        <div class="menu-item page-link" dest="strength">STRENGTH</div>
+                        <div class="menu-item page-link" dest="projects">PROJECTS</div>
+                        <div class="menu-item page-link" dest="contact">CONTACT</div>
                     </div>
                 </nav>
             </section>
 
+            <!-- About -->
             <section class="flex" id="about">
                 <h2 class="header">ABOUT</h2>
-                <div class="flex row">
+                <div class="flex row container wrapper">
                     <div class="flex introduce">
-                        <img src="" alt="얼굴 사진">
+                        <img src="images/me.jpg" alt="얼굴 사진" class="backup-image">
                         <div class="text">
-                            <a class="highlight" href="https://www.lucoms.com/main/index.asp">대우루컴즈</a>에서 펌웨어 개발자로 재직중인 안재우입니다.<br>
-                            모든 SW 개발 분야에 관심을 갖고 있고, 현재 <span class="highlight">Front-end</span> 분야를 공부하고 있습니다.
+                            <a class="highlight" href="https://www.lucoms.com/main/index.asp">대우루컴즈</a>에서 펌웨어 개발자로 재직중인 <span class="highlight">안재우</span>입니다.<br>
+                            다양한 SW 분야에 관심을 갖고 있고, 현재 <span class="highlight">Front-end</span> 분야를 공부하고 있습니다.
                         </div>
                     </div>
                     <div class="flex skills">
                         <div class="skills-item">
-                            
+                            <div class="flex skills-text">C</div>
+                            <div class="bar-wrap">
+                                <div class="bar" style="max-width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skills-item">
+                            <div class="flex skills-text">C#</div>
+                            <div class="bar-wrap">
+                                <div class="bar" style="max-width: 70%;"></div>
+                            </div>
+                        </div>
+                        <div class="skills-item">
+                            <div class="flex skills-text">Kotlin</div>
+                            <div class="bar-wrap">
+                                <div class="bar" style="max-width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="skills-item">
+                            <div class="flex skills-text">Java</div>
+                            <div class="bar-wrap">
+                                <div class="bar" style="max-width: 50%;"></div>
+                            </div>
+                        </div>
+                        <div class="skills-item">
+                            <div class="flex skills-text">Python</div>
+                            <div class="bar-wrap">
+                                <div class="bar" style="max-width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="skills-item">
+                            <div class="flex skills-text">HTML</div>
+                            <div class="bar-wrap">
+                                <div class="bar" style="max-width: 50%;"></div>
+                            </div>
+                        </div>
+                        <div class="skills-item">
+                            <div class="flex skills-text">CSS</div>
+                            <div class="bar-wrap">
+                                <div class="bar" style="max-width: 40%;"></div>
+                            </div>
+                        </div>
+                        <div class="skills-item">
+                            <div class="flex skills-text">Git</div>
+                            <div class="bar-wrap">
+                                <div class="bar" style="max-width: 40%;"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
+            <!-- Strength -->
+            <section class="flex" id="strength">
+                <h2 class="header">STRENGTH</h2>
+                <div class="flex row container wrapper">
+                    <div class="flex row strength-wrap">
+                        <div class="flex strength-item">
+                            <i class="mdi mdi-hexagon hexagon" style="font-size: 200px;">
+                                <i class="mdi mdi-lightbulb-on icon" style="font-size: 100px;"></i>    
+                            </i>
+                            <div class="title">Intuitive</div>
+                            <div class="text">코드를 쉽게 해석할 수 있도록 직관적으로 작성합니다.</div>
+                        </div>
+                        <div class="flex strength-item">
+                            <i class="mdi mdi-hexagon hexagon" style="font-size: 200px;">
+                                <i class="mdi mdi-equalizer icon" style="font-size: 100px;"></i>    
+                            </i>
+                            <div class="title">Quality</div>
+                            <div class="text">프로젝트가 크든 작든 항상 높은 완성도를 추구합니다.</div>
+                        </div>
+                    </div>
+                    <div class="flex row strength-wrap">
+                        <div class="flex strength-item">
+                            <i class="mdi mdi-hexagon hexagon" style="font-size: 200px;">
+                                <i class="mdi mdi-book-open-variant icon" style="font-size: 100px;"></i>    
+                            </i>
+                            <div class="title">Fast Learner</div>
+                            <div class="text">무엇이든지 빨리 배우며 궁금한 부분은 스스로 학습합니다.</div>
+                        </div>
+                        <div class="flex strength-item">
+                            <i class="mdi mdi-hexagon hexagon" style="font-size: 200px;">
+                                <i class="mdi mdi-head-snowflake-outline icon" style="font-size: 100px;"></i>    
+                            </i>
+                            <div class="title">Applicable</div>
+                            <div class="text">배운 내용을 적재적소에 응용할 수 있습니다.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section class="flex" id="projects">
+                <h2 class="header">PROJECTS</h2>
+                <div class="flex container">
+                    <div class="flex row projects-type-wrap">
+                        <div class="flex projects-type all active">All</div>
+                        <div class="flex projects-type personal">Personal</div>
+                        <div class="flex projects-type business">Business</div>
+                    </div>
+                    <div class="flex row projects-list wrapper">
+                        <div class="projects-item all personal">
+                            <img src="images/Profile.png" alt="MaskDetection" class="backup-image">
+                            <div class="flex projects-info">
+                                <h3>Profile site (2021.06)</h3>
+                                <p class="summary">HTML / CSS / JS</p>
+                                <p class="details">
+                                    앞으로 개발 경력이 쌓여감에 따라 내가 해왔던 일, 해왔던 공부를 기록할 수 있는 곳이 필요하다고 생각하여 시작한 프로젝트입니다.<br><br>
+                                    진행해온 프로젝트, 개발 하며 생겼던 문제와 해결 방법, 내 취미 등을 기록할 예정입니다.<br><br>
+                                    HTML/CSS/Javascript 프로그래밍에 대해 배웠습니다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="projects-item all personal">
+                            <img src="images/MaskDetection.png" alt="MaskDetection" class="backup-image">
+                            <div class="flex projects-info">
+                                <h3>MaskDetection (2021.06)</h3>
+                                <p class="summary">Android / Python</p>
+                                <p class="details">
+                                    코로나19가 확산됨에 따라 마스크 착용이 중요해져서 시작한 프로젝트입니다.<br><br>
+                                    Raspberry Pi에 PiCam을 장착하여 마스크를 착용했는지 확인하고, 
+                                    만약 착용하지 않은 사람이 지나가면 블루투스를 통해 안드로이드 기기에 감지 알림을 보냅니다.<br>
+                                    안드로이드 기기에선 감지된 미착용자 목록과, 당시의 사진을 확인할 수 있습니다. <br><br>
+                                    Android, Python 프로그래밍에 대해 배웠습니다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="projects-item all business">
+                            <img src="images/WhiteBalance.jpg" alt="WhiteBalance" class="backup-image">
+                            <div class="flex projects-info">
+                                <h3>WhiteBalance Adjust (2021.04)</h3>
+                                <p class="summary">C#</p>
+                                <p class="details">
+                                    모니터, 패턴기, 휘도계와 연결하여 색좌표를 자동으로 조율하는 프로그램입니다.<br><br>
+                                    입력 변수 6개를 통해 출력 변수 3개를 범위 안에 들어오도록 해야 하며, 
+                                    변수 간의 명확한 관계도 없어 조금 헤멨지만 결국 알고리즘을 완성시켰습니다.<br><br>
+                                    프로그램을 사용 한 후 사람이 직접 조율할 때에 비해 소모되는 시간이 90% 가량 단축되었습니다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="projects-item all personal">
+                            <img src="images/Game.png" alt="Game" class="backup-image">
+                            <div class="flex projects-info">
+                                <h3>전략 게임 구현 (2020.11)</h3>
+                                <p class="summary">Java</p>
+                                <p class="details">
+                                    Java Swing을 실습해보고자 시작한 프로젝트입니다.<br><br>
+                                    다양한 적과 각각의 AI, 플레이어 스킬과 애니메이션까지 구현하였습니다.<br><br>
+                                    Java 클래스 구조 설계 및 Swing 사용법에 대해 배웠습니다.<br><br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="projects-item all business">
+                            <img src="images/MonitoringBD.jpg" alt="MonitoringBD" class="backup-image">
+                            <div class="flex projects-info">
+                                <h3>Monitoring B/D (2020.07)</h3>
+                                <p class="summary">C# / STM32</p>
+                                <p class="details">
+                                    자사 모니터의 상태를 확인하고, 원격으로 제어하기 위해 시작한 프로젝트입니다. <br><br>
+                                    Serial/Ethernet 연결을 통해 모니터 주변환경 정보를 수집해 위험한 상황에 신속히 대쳐할 수 있습니다.<br>
+                                    또한 원격으로 모니터 주변 기기를 제어하고, 리모컨 명령을 보낼 수 있습니다.<br><br>
+                                    C#과 STM32 프로그래밍에 대해 배웠습니다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="projects-item all personal">
+                            <img src="images/PMS.png" alt="PMS" class="backup-image">
+                            <div class="flex projects-info">
+                                <h3>PMS (2020.04)</h3>
+                                <p class="summary">MFC</p>
+                                <p class="details">
+                                    폴더를 정리하다 불편함을 느껴 시작한 프로젝트입니다.<br><br>
+                                    가상의 workspace와 폴더 구조를 제공하며, 사용자가 원하는 대로 파일을 추가/제거 할 수 있습니다.<br><br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="projects-item all personal">
+                            <img src="images/ACGP.png" alt="ACGP" class="backup-image">
+                            <div class="flex projects-info">
+                                <h3>ACGP (2019.09)</h3>
+                                <p class="summary">C++</p>
+                                <p class="details">
+                                    STM32CubeIDE 프로그램을 모티브로 시작한 프로젝트입니다.<br><br>
+                                    정해진 양식의 템플릿 파일을 추가하면 그에 따른 코드를 자동으로 생성해줍니다. <br><br>
+                                    오류 발생을 줄이기 위해 코드 재생성 시 초기화되는 Template Code와 초기화되지 않는 User Code영역으로 분리하였습니다.<br><br>
+                                    C++ 객체지향 프로그래밍에 대해 배웠습니다.<br><br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="flex" id="contact">
+                <h2 class="header">CONTACT</h2>
+                <div class="flex container">
+                    <form id="form-send" class="flex" method="POST" action="#">
+                        <input class="form-item" type="text" placeholder="Name" name="name">
+                        <input class="form-item" type="email" placeholder="Email" name="email">
+                        <input class="form-item" type="text" placeholder="Title" name="title">
+                        <textarea class="form-item" placeholder="Message" name="message"></textarea>
+                        <button class="btn-submit" type="submit" form="form-send">Send Message</button>
+                    </form>
+                </div>
             </section>
         </div>
+        <script src="scripts/index.js"></script>
     </body>
 </html>
