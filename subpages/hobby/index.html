@@ -1,9 +1,62 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>DevJaewoo</title>
 
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
-        
+        <div class="flex wrap">
+            <!-- visual -->
+            <div id="visual">
+                <img src="images/background2.jpg">
+            </div>
+
+            <!-- content -->
+            <div id="content">
+                <section id="" class="flex category">
+                    <div class="flex category-container">
+                        <div class="flex row category-info" style="background: #F7B15C;">
+                            <span class="category-name">NAME</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </div>
+                        <div class="flex row category-list">
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="Ug3WPU8yVc4">
+                                <div class="flex item-info">
+                                    <h3 class="title">Game</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="category-move left" onclick="onCategoryLeftClick()">
+                            <i class="mdi mdi-chevron-left"></i>
+                        </div>
+
+                        <div class="category-move right" onclick="onCategoryRightClick()">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- menu -->
+            <div id="menu">
+
+            </div>
+        </div>
+
+        <script src="scripts/index.js"></script>
     </body>
 </html>
