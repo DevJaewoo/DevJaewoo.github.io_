@@ -4,9 +4,7 @@ $(".backup-image").on("error", function () {
 
 $(".page-link").on("click", function () {
 	var anchor = $(this).attr("dest");
-	$("html, body").animate(
-		{ scrollTop: $("#" + anchor).offset().top }, 500
-	);
+	$("html, body").animate({scrollTop: $("#" + anchor).offset().top}, 500);
 });
 
 $(".projects-type").on("click", function () {

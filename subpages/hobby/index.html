@@ -1,9 +1,652 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>DevJaewoo</title>
 
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap">
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </head>
     <body>
-        
+        <div class="flex wrap">
+            <!-- visual -->
+            <div id="visual">
+                <div class="background"></div>
+                <div class="flex header">
+                    <h1>MY HOBBY</h1>
+                </div>
+            </div>
+
+            <!-- content -->
+            <div id="content">
+                <section id="adventure" class="flex category">
+                    <div class="flex category-container">
+                        <div class="flex row category-info" style="background: #E5243F;">
+                            <span class="category-name">ADVENTURE</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </div>
+                        <div class="flex row category-list">
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="zU3rmggIcpc">
+                                <div class="flex item-info">
+                                    <h3 class="title">Ori and the Blind forest</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="UAO2urG23S4">
+                                <div class="flex item-info">
+                                    <h3 class="title">Hollow Knight</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="zw47_q9wbBE">
+                                <div class="flex item-info">
+                                    <h3 class="title">The Legend of Zelda:<br>Breath of the Wild</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="Rz2SNm8VguE">
+                                <div class="flex item-info">
+                                    <h3 class="title">Subnautica</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="nFBrgeSjj-0">
+                                <div class="flex item-info">
+                                    <h3 class="title">Tomb Raider</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="W01L70IGBgE">
+                                <div class="flex item-info">
+                                    <h3 class="title">The Last of Us</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="mU3nNT4rcFg">
+                                <div class="flex item-info">
+                                    <h3 class="title">Journey</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="BRiKQIVo7ao">
+                                <div class="flex item-info">
+                                    <h3 class="title">GRIS</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="category-move left">
+                            <i class="mdi mdi-chevron-left"></i>
+                        </div>
+
+                        <div class="category-move right">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </div>
+                    </div>
+                </section>
+                <section id="action" class="flex category">
+                    <div class="flex category-container">
+                        <div class="flex row category-info" style="background: #F65C51;">
+                            <span class="category-name">Action</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </div>
+                        <div class="flex row category-list">
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="Ro6r15wzp2o">
+                                <div class="flex item-info">
+                                    <h3 class="title">Monster Hunter: World</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="pJ-aR--gScM">
+                                <div class="flex item-info">
+                                    <h3 class="title">Risk of Rain</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="EXnbMp1yr1k">
+                                <div class="flex item-info">
+                                    <h3 class="title">Super Smash Bros. Ultimate</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="rXMX4YJ7Lks">
+                                <div class="flex item-info">
+                                    <h3 class="title">Sekiro: Shadows Die Twice</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="category-move left">
+                            <i class="mdi mdi-chevron-left"></i>
+                        </div>
+
+                        <div class="category-move right">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </div>
+                    </div>
+                </section>
+                <section id="rpg" class="flex category">
+                    <div class="flex category-container">
+                        <div class="flex row category-info" style="background: #F7B15C;">
+                            <span class="category-name">RPG</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </div>
+                        <div class="flex row category-list">
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="8A7A1X1TVNc">
+                                <div class="flex item-info">
+                                    <h3 class="title">Stardew Valley</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="ruT-wjtKBNo">
+                                <div class="flex item-info">
+                                    <h3 class="title">Forager</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="oOL-dsa79Xs">
+                                <div class="flex item-info">
+                                    <h3 class="title">Slime Rancher</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="category-move left">
+                            <i class="mdi mdi-chevron-left"></i>
+                        </div>
+
+                        <div class="category-move right">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </div>
+                    </div>
+                </section>
+                <section id="roguelike" class="flex category">
+                    <div class="flex category-container">
+                        <div class="flex row category-info" style="background: #54C6BE;">
+                            <span class="category-name">ROGUELIKE</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </div>
+                        <div class="flex row category-list">
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="VuL66Np7QcI">
+                                <div class="flex item-info">
+                                    <h3 class="title">Dungreed</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="YSpo2VvN0SM">
+                                <div class="flex item-info">
+                                    <h3 class="title">Enter the Gungeon</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="mD8x5xLHRho">
+                                <div class="flex item-info">
+                                    <h3 class="title">Hades</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="SGLpfqHV5Jc">
+                                <div class="flex item-info">
+                                    <h3 class="title">Slay the Spire</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="jqk8JL76fXI">
+                                <div class="flex item-info">
+                                    <h3 class="title">Skul: The Hero Slayer</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="1bsU7iQM66o">
+                                <div class="flex item-info">
+                                    <h3 class="title">Wizard of Legend</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="category-move left">
+                            <i class="mdi mdi-chevron-left"></i>
+                        </div>
+
+                        <div class="category-move right">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </div>
+                    </div>
+                </section>
+                <section id="survive" class="flex category">
+                    <div class="flex category-container">
+                        <div class="flex row category-info" style="background: #5088B0;">
+                            <span class="category-name">SURVIVE</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </div>
+                        <div class="flex row category-list">
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="WJ-1O_w2KTg">
+                                <div class="flex item-info">
+                                    <h3 class="title">The Long Dark</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="Lx3u0CB3soI">
+                                <div class="flex item-info">
+                                    <h3 class="title">Raft</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="category-move left">
+                            <i class="mdi mdi-chevron-left"></i>
+                        </div>
+
+                        <div class="category-move right">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </div>
+                    </div>
+                </section>
+                <section id="defense" class="flex category">
+                    <div class="flex category-container">
+                        <div class="flex row category-info" style="background: #0059FF;">
+                            <span class="category-name">DEFENSE</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </div>
+                        <div class="flex row category-list">
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="PvFaD6g6yzk">
+                                <div class="flex item-info">
+                                    <h3 class="title">Bloons TD 6</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="UdIvQ59eLVQ">
+                                <div class="flex item-info">
+                                    <h3 class="title">Mindustry</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="category-move left">
+                            <i class="mdi mdi-chevron-left"></i>
+                        </div>
+
+                        <div class="category-move right">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </div>
+                    </div>
+                </section>
+                <section id="multiplay" class="flex category">
+                    <div class="flex category-container">
+                        <div class="flex row category-info" style="background: #5300FF;">
+                            <span class="category-name">MULTIPLAY</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </div>
+                        <div class="flex row category-list">
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="B-yLOztM9zk">
+                                <div class="flex item-info">
+                                    <h3 class="title">League of Legends</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="zFm_D_38N20">
+                                <div class="flex item-info">
+                                    <h3 class="title">Super Bunny Man</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="Wj3dUvGLjNQ">
+                                <div class="flex item-info">
+                                    <h3 class="title">Fall Guys: Ultimate Knockout</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="category-move left">
+                            <i class="mdi mdi-chevron-left"></i>
+                        </div>
+
+                        <div class="category-move right">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </div>
+                    </div>
+                </section>
+                <section id="sandbox" class="flex category">
+                    <div class="flex category-container">
+                        <div class="flex row category-info" style="background: #9300FF;">
+                            <span class="category-name">SANDBOX</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </div>
+                        <div class="flex row category-list">
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="0G1hVQxkTBE">
+                                <div class="flex item-info">
+                                    <h3 class="title">Minecraft</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="H77Zfzy4LWw">
+                                <div class="flex item-info">
+                                    <h3 class="title">Terraria</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="category-move left">
+                            <i class="mdi mdi-chevron-left"></i>
+                        </div>
+
+                        <div class="category-move right">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </div>
+                    </div>
+                </section>
+                <section id="strategy" class="flex category">
+                    <div class="flex category-container">
+                        <div class="flex row category-info" style="background: #FF006C;">
+                            <span class="category-name">STRATEGY</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </div>
+                        <div class="flex row category-list">
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="5KdE0p2joJw">
+                                <div class="flex item-info">
+                                    <h3 class="title">Civilization VI</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="xco-KnAmdMU">
+                                <div class="flex item-info">
+                                    <h3 class="title">HearthStone</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="Mbq8lgzXCxQ">
+                                <div class="flex item-info">
+                                    <h3 class="title">Legends of Runeterra</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="Ug3WPU8yVc4">
+                                <div class="flex item-info">
+                                    <h3 class="title">Starcraft</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="category-move left">
+                            <i class="mdi mdi-chevron-left"></i>
+                        </div>
+
+                        <div class="category-move right">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </div>
+                    </div>
+                </section>
+                <section id="puzzle" class="flex category">
+                    <div class="flex category-container">
+                        <div class="flex row category-info" style="background: #FF8C00;">
+                            <span class="category-name">PUZZLE</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </div>
+                        <div class="flex row category-list">
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="tax4e4hBBZc">
+                                <div class="flex item-info">
+                                    <h3 class="title">Portal Series</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="sjrs_4FRDhw">
+                                <div class="flex item-info">
+                                    <h3 class="title">The Room Series</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="y9fdG2KM97Y">
+                                <div class="flex item-info">
+                                    <h3 class="title">Rusty Lake Series</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="R6RUyC-w9Lk">
+                                <div class="flex item-info">
+                                    <h3 class="title">Cube Escape Series</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="_SX8XMwMw6Y">
+                                <div class="flex item-info">
+                                    <h3 class="title">Superliminal</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="category-move left">
+                            <i class="mdi mdi-chevron-left"></i>
+                        </div>
+
+                        <div class="category-move right">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </div>
+                    </div>
+                </section>
+                <section id="rhythm" class="flex category">
+                    <div class="flex category-container">
+                        <div class="flex row category-info" style="background: #FFD900;">
+                            <span class="category-name">RHYTHM</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </div>
+                        <div class="flex row category-list">
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="gBcvKobh9N0">
+                                <div class="flex item-info">
+                                    <h3 class="title">Rhythm Doctor</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="Bqj-tnv5K2c">
+                                <div class="flex item-info">
+                                    <h3 class="title">A Dance of Fire and Ice</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="category-move left">
+                            <i class="mdi mdi-chevron-left"></i>
+                        </div>
+
+                        <div class="category-move right">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </div>
+                    </div>
+                </section>
+                <section id="other" class="flex category">
+                    <div class="flex category-container">
+                        <div class="flex row category-info" style="background: #00FF53;">
+                            <span class="category-name">OTHER</span>
+                            <i class="mdi mdi-chevron-down"></i>
+                        </div>
+                        <div class="flex row category-list">
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="1Hojv0m3TqA">
+                                <div class="flex item-info">
+                                    <h3 class="title">Undertale</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <img src="" alt="thumbnail" vid="RGEovo2mdIc">
+                                <div class="flex item-info">
+                                    <h3 class="title">To the Moon</h3>
+                                    <div class="button">
+                                        View Details <i class="mdi mdi-chevron-double-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="category-move left">
+                            <i class="mdi mdi-chevron-left"></i>
+                        </div>
+
+                        <div class="category-move right">
+                            <i class="mdi mdi-chevron-right"></i>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- menu -->
+            <nav id="menu" class="flex">
+                <div dest="adventure" class="menu-item">Adventure</div>
+                <div dest="action" class="menu-item active">Action</div>
+                <div dest="rpg" class="menu-item">RPG</div>
+                <div dest="roguelike" class="menu-item">Roguelike</div>
+                <div dest="survive" class="menu-item">Survive</div>
+                <div dest="defense" class="menu-item">Defense</div>
+                <div dest="multiplay" class="menu-item">Multiplay</div>
+                <div dest="sandbox" class="menu-item">Sandbox</div>
+                <div dest="strategy" class="menu-item">Strategy</div>
+                <div dest="puzzle" class="menu-item">Puzzle</div>
+                <div dest="rhythm" class="menu-item">Rhythm</div>
+                <div dest="other" class="menu-item">Other</div>
+            </nav>
+        </div>
+
+        <script src="scripts/index.js"></script>
     </body>
 </html>
