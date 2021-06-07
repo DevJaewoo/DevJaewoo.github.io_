@@ -104,6 +104,13 @@ $(window).on("scroll", function () {
 	var pos = $(window).scrollTop();
 	var pos2 = pos + 300;
 
+    if(pos >= $("#adventure").offset().top) {
+        $("#menu").addClass("fixed");
+    }
+    else {
+        $("#menu").removeClass("fixed");
+    }
+
 	// Link Highlighting
     for(var i=0; i<category.length; i++) {
         if(pos2 >= $("#" + category[i]).offset().top) {
