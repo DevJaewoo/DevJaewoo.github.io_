@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+/* init */
+* {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-family: 'Roboto Condensed', 'Nanum Gothic', sans-serif;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    text-align: center;
+    transition-timing-function: ease-in-out;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    min-width: 280px;
+    min-height: 500px;
+}
+
+.wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex.row {
+    flex-direction: row;
+}
+
+.flex.wrapper {
+    flex-wrap: wrap;
+}
+
+/* visual */
+#visual {
+    position: relative;
+    width: 100vw;
+    max-width: 1200px;
+    height: 500px;
+    overflow: hidden;
+}
+
+#visual .background {
+    width: 100%;
+    height: 100%;
+    background: url("images/background1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#visual .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#visual .header h1 {
+    color: #FFFFFF;
+    font-size: 70px;
+}
+
+/* content */
+.content {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    min-height: calc(100vh - 500px);
+    background: #EEEEEE;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: #1B242F;
+    justify-content: flex-start;
+}
+
+.menu .button {
+    margin-top: 30px; 
+    width: 80%;
+    height: 100px;
+    background: #09085e;
+    border: 5px solid #070646;
+
+    color: #FFF;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* post */
+.post-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 250px);
+    height: 100%;
+    flex-grow: 1;
+    justify-content: flex-start;
+}
+
+.post {
+    width: 90%;
+    height: 30px;
+    border: 1px solid #000000;
+}
+
+.post.header {
+    margin-top: 50px;
+    border: 1px solid #000000;
+    background-color: #BBBBBB;
+}
+
+.post.header span {
+    font-weight: bold;
+}
+
+.post span {
+    display: inline-block;
+}
+
+.post .post-num {
+    width: 70px;
+}
+
+.post .post-title {
+    flex-grow: 1;
+}
+
+.post .post-user {
+    width: 100px;
+}
+
+.post .post-date {
+    width: 150px;
+}
+
+.post .post-control {
+    width: 120px;
+}
+
+.post-control .button {
+    padding: 0 5px;
+    width: 40px;
+    border: 1px solid #000000;
+    background: #CCCCCC;
+    cursor: pointer;
+}

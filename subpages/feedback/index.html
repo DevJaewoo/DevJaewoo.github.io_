@@ -12,8 +12,39 @@
         <link rel="stylesheet" href="style.css">
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="scripts/sql.js"></script>
     </head>
     <body>
+        <div class="flex wrap">
+            <!-- visual -->
+            <div id="visual">
+                <div class="background"></div>
+                <div class="flex header">
+                    <h1>FEEDBACK</h1>
+                </div>
+            </div>
+
+            <div class="flex row content">
+
+                <!-- nav -->
+                <nav class="flex menu">
+                    <div class="flex button new">글 작성</div>
+                    <div class="flex button drop">초기화</div>
+                    <div class="flex button test">Test</div>
+                </nav>
+
+                <!-- postlist -->
+                <div class="flex post-list">
+                    <div class="flex row post header">
+                        <span class="post-num">번호</span>
+                        <span class="post-title">제목</span>
+                        <span class="post-user">작성자</span>
+                        <span class="post-date">작성 시간</span>
+                        <span class="post-control">기타 작업</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="scripts/websql.js"></script>
     </body>
 </html>
