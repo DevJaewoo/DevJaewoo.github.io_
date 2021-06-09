@@ -23,24 +23,103 @@
                 </div>
             </div>
 
-            <div class="flex row content">
+            <div class="flex row container">
 
                 <!-- nav -->
                 <nav class="flex menu">
-                    <div class="flex button new">글 작성</div>
-                    <div class="flex button drop">초기화</div>
-                    <div class="flex button test">Test</div>
+                    <div class="flex option home">HOME</div>
+                    <div class="flex option new">글 작성</div>
+                    <div class="flex option drop">초기화</div>
+                    <div class="flex option test">Test</div>
                 </nav>
 
-                <!-- postlist -->
-                <div class="flex post-list">
-                    <div class="flex row post header">
-                        <span class="post-num">번호</span>
-                        <span class="post-title">제목</span>
-                        <span class="post-user">작성자</span>
-                        <span class="post-date">작성 시간</span>
-                        <span class="post-control">기타 작업</span>
-                    </div>
+                <div class="flex mainpage">
+                    <!-- postnew -->
+                    <section class="flex post-new">
+                        <div class="flex row top">
+                            <div class="flex row title">
+                                <label for="post-new-title">제목 </label> 
+                                <input id="post-new-title" type="text" placeholder="" required autofocus>
+                            </div>
+                            <div class="flex row name">
+                                <label for="post-new-name">작성자 </label> 
+                                <input id="post-new-name" type="text" placeholder="" required autofocus>
+                            </div>
+                        </div>
+                        <div class="flex row center">
+                            <textarea id="post-new-content"></textarea>
+                        </div>
+                        <div class="flex row bottom">
+                            <div class="button post-new-submit">확인</div>
+                            <div class="button post-new-cancel">취소</div>
+                        </div>
+                    </section>
+
+                    <!-- postlist -->
+                    <section class="flex post-list">
+                        <div class="flex row post-header">
+                            <span class="num">번호</span>
+                            <span class="title">제목</span>
+                            <span class="user">작성자</span>
+                            <span class="date">작성 시간</span>
+                            <span class="control">기타 작업</span>
+                        </div>
+                        <div class="flex post-read">
+                            
+                        </div>
+                    </section>
+
+                    <!-- postread -->
+                    <section class="flex post-read active">
+                        <div class="flex post-read-main">
+                            <div class="flex row header">
+                                <span class="num">번호: 10</span>
+                                <span class="title">제에에에에에에에에에에에에에에에에에에에에에에에에에에에에에에목</span>
+                                <span class="user">작성자: 가나다라마바사</span>
+                                <span class="date">2021-06-09 15:49:30</span>
+                            </div>
+                            <div class="content">
+                                가낟라마바ㅏ사
+                            </div>
+                        </div>
+                        <div class="flex comment-main">
+                            <div class="comment-header">댓글</div>
+                            <div class="flex row comment-write">
+                                <div class="flex row name">
+                                    <label for="post-comment-name">작성자 </label> 
+                                    <input id="post-comment-name" type="text" placeholder="" required autofocus>
+                                </div>
+                                <div class="flex row content">
+                                    <label for="post-comment-content">내용 </label> 
+                                    <input id="post-comment-content" type="text" placeholder="" required autofocus>
+                                </div>
+                                <div class="control">
+                                    <span class="button submit">작성</span>
+                                    <span class="button cancel">취소</span>
+                                </div>
+                            </div>
+                            <div class="flex comment-read">
+                                <div class="flex row comment">
+                                    <span class="user">AJW</span>
+                                    <span class="content">hi</span>
+                                    <span class="date">2021-06-09 05:25:46</span>
+                                    <div class="control">
+                                        <span class="button edit" data-no="0" data-idx="8">수정</span>
+                                        <span class="button delete" data-no="0" data-idx="8">삭제</span>
+                                    </div>
+                                </div>
+                                <div class="flex row comment">
+                                    <span class="user">AJWlkjhj</span>
+                                    <span class="content">hkjhlkjhlkjhlkjhi</span>
+                                    <span class="date">2021-06-09 05:25:46</span>
+                                    <div class="control">
+                                        <span class="button edit" data-no="0" data-idx="8">수정</span>
+                                        <span class="button delete" data-no="0" data-idx="8">삭제</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>

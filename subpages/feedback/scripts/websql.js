@@ -1,5 +1,7 @@
 var systemDB;
 var dataset;
+var postId = -1;
+var commentId = -1;
 
 $(document).ready(function () {
     initDatabase();
@@ -7,10 +9,24 @@ $(document).ready(function () {
     $(".test").on("click", function() {
 
         insertTestDB();
+        selectCommentList(7);
+    });
+
+
+    // 홈으로 이동
+    $(".menu .home").on("click", function() {
+        resetPost();
+        selectForeground(".post-list");
+    });
+
+    // 새 글 작성
+    $(".menu .new").on("click", function() {
+        postId = -1;
+        selectForeground(".post-new")
     });
 
     // 테이블 삭제
-    $(".drop").on("click", function () {
+    $(".menu .drop").on("click", function () {
 
         if (!confirm("테이블을 삭제하겠습니까?")) {
             return;
@@ -19,46 +35,76 @@ $(document).ready(function () {
         dropTable();
     });
 
-    // // 입력
-    // $("#btn_insert").click(function() {
-    //     var username = $('#username').val().trim(); 
-    //     var content = $('#content').val().trim();
+    $(".post .title")
 
-    //     if (username === "" || content === "") {
-    //         alert("글을 적어주세요.");
-    //         $('#username').focus();
-    //         return;
-    //     }
-
-    //     //insertDB(systemDB);
-    // });
-
-    // // 리스트 수정버튼
-    // $("body").on("click", ".btn_edit", function() {
-    //     var no = $(this).data("no");
-    //     var idx = $(this).data("idx");
-    //     $("#id").val(idx);
-    //     loadRecord(no);
-    // });
-
-    // 업데이트
-    $("body").on("click", ".edit", function() {
+    // 글 작성 확인
+    $(".post-new-submit").on("click", function() {
         
-        var username = $('#username').val().trim(); 
-        var content = $('#content').val().trim();
-        var idx = $("#id").val(); 
+        var username = $('#post-new-name').val(); 
+        var title = $('#post-new-title').val();
+        var content = $('#post-new-content').val();
 
-        if (username === "" || content === "" || Number(idx) <= 0) {
+        if (username == "" || title == "" || content == "") {
             alert("글을 적어주세요.");
-            $('#username').focus();
             return;
         }
 
-        updateDB();
+        if(postId == -1) {
+            insertPost(username, title, content);
+        }
+        else {
+            updatePost(username, title, content, postId);
+        }
+
+        postId = -1;
+
+        resetPost();
+        selectForeground(".post-list");
     });
 
-    // 삭제
-    $("body").on("click", ".delete", function() {
+    // 댓글 작성 확인
+    $(".post-new-submit").on("click", function() {
+        
+        var username = $('#post-new-name').val(); 
+        var content = $('#post-new-content').val();
+
+        if (username == "" || content == "") {
+            alert("댓글을 적어주세요.");
+            return;
+        }
+
+        if(commentId == -1) {
+            insertComment(username, content, postId);
+        }
+        else {
+            updateComment(username, content, commentId);
+        }
+
+        commentId = -1;
+
+        resetPost();
+        selectForeground(".post-list");
+    });
+
+    // 글 작성 취소
+    $(".post-new-cancel").on("click", function() {
+        resetPost();
+        selectForeground(".post-list");
+    });
+
+    
+    // 글 수정
+    $("body").on("click", ".post .edit", function() {
+        var no = $(this).data("no");
+        var idx = $(this).data("idx");
+
+        postId = idx;
+        loadRecord(no);
+        selectForeground(".post-new")
+    });
+
+    // 글 삭제
+    $("body").on("click", ".post .delete", function() {
         
         var idx = $(this).data("idx");
 
@@ -74,10 +120,6 @@ $(document).ready(function () {
         deletePost(idx);
         selectPostList();
     });
-
-
-    // 글 지우기
-    //$("#btn_reset").click(resetForm);
 });
 
 //DB 초기화
@@ -108,12 +150,8 @@ function createTable() {
         + " content TEXT NOT NULL,"
         + " regdate TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP)";
 
-    // systemDB.transaction(function (tx) { 
-    //     tx.executeSql(strCreate, [], null, errorHandler);    
-    // });
-
     //댓글 테이블
-    strCreateComment = "CREATE TABLE IF NOT EXISTS tb_comment"
+    var strCreateComment = "CREATE TABLE IF NOT EXISTS tb_comment"
         + " (idx INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"
         + " username TEXT NOT NULL,"
         + " content TEXT NOT NULL,"
@@ -131,13 +169,10 @@ function dropTable() {
 
     systemDB.transaction(function (tx) {
         tx.executeSql("DROP TABLE tb_post", [], loadAndReset, errorHandler);
-    });
-
-    systemDB.transaction(function (tx) {
         tx.executeSql("DROP TABLE tb_comment", [], loadAndReset, errorHandler);
     });
 
-    //resetForm(); 
+    resetPost(); 
     initDatabase();
 }
 
@@ -169,7 +204,7 @@ function updatePost(username, title, content, idx) {
 }
 
 //댓글 수정
-function updatePost(username, content, idx) {
+function updateComment(username, content, idx) {
     var strSql = "UPDATE tb_comment SET username = ?, content = ? WHERE idx = ?";
 
     systemDB.transaction(function (tx) {
@@ -202,31 +237,31 @@ function deleteComment(idx) {
 //게시글 조회
 function selectPostList() {
     var strSql = "SELECT * FROM tb_post order by idx desc";
-    $(".post-list").html('');
+    $(".post-read").html('');
 
     systemDB.transaction(function (tx) {
         tx.executeSql(strSql, [], function (tx, result) {
             dataset = result.rows;
             var str = '<div class="flex row post header">\n'
-                + '<span class="post-num">번호</span>\n'
-                + '<span class="post-title">제목</span>\n'
-                + '<span class="post-user">작성자</span>\n'
-                + '<span class="post-date">작성 시간</span>\n'
-                + '<span class="post-control">기타 작업</span>\n'
+                + '<span class="num">번호</span>\n'
+                + '<span class="title">제목</span>\n'
+                + '<span class="user">작성자</span>\n'
+                + '<span class="date">작성 시간</span>\n'
+                + '<span class="control">기타 작업</span>\n'
                 + '</div>';
 
             if (dataset.length > 0) {
                 for (var i = 0, item = null; i < dataset.length; i++) {
                     item = dataset.item(i);
-                    str += '<div class="flex row post">'
-                        + '<span class="post-num">' + (i + 1) + '</span>\n'
-                        + '<span class="post-title">' + item['title'] + '</span>\n'
-                        + '<span class="post-user">' + item['username'] + '</span>\n'
-                        + '<span class="post-date">' + item['regdate'] + '</span>\n'
-                        + '<div class="post-control"\n>'
-                        + '<span class="button edit" data-no="' + i + '" data-idx="' + item['idx'] + '">edit</span>\n'
-                        + '<span class="button delete" data-no="' + i + '"data-idx="' + item['idx'] + '">delete</span>\n'
-                        + '</div>'
+                    str += '<div class="flex row post">\n'
+                        + '<span class="num">' + (i + 1) + '</span>\n'
+                        + '<span class="title">' + item['title'] + '</span>\n'
+                        + '<span class="user">' + item['username'] + '</span>\n'
+                        + '<span class="date">' + item['regdate'] + '</span>\n'
+                        + '<div class="control">\n'
+                        + '<span class="button edit" data-no="' + i + '" data-idx="' + item['idx'] + '">수정</span>\n'
+                        + '<span class="button delete" data-no="' + i + '"data-idx="' + item['idx'] + '">삭제</span>\n'
+                        + '</div>\n'
                         + '</div>';
                 }
             }
@@ -234,37 +269,85 @@ function selectPostList() {
                 str += "작성된 글이 없습니다.";
             }
 
-            $(".post-list").html(str);
-            //console.log(str);
+            $(".post-read").html(str);
+        });
+    });
+}
+
+function selectCommentList(idx) {
+    var strSql = "SELECT * FROM tb_comment WHERE postid=? order by idx asc";
+    $(".comment-read").html('');
+
+    systemDB.transaction(function (tx) {
+        tx.executeSql(strSql, [Number(idx)], function (tx, result) {
+            dataset = result.rows;
+            var str = '';
+
+            if (dataset.length > 0) {
+                for (var i = 0, item = null; i < dataset.length; i++) {
+                    item = dataset.item(i);
+                    str += '<div class="flex row comment">\n'
+                    + '<span class="user">' + item['username'] + '</span>\n'
+                    + '<span class="content">' + item['content'] + '</span>\n'
+                    + '<span class="date">' + item['regdate'] + '</span>\n'
+                    + '<div class="control">\n'
+                    + '<span class="button edit" data-no="' + i + '" data-idx="' + item['idx'] + '">수정</span>\n'
+                    + '<span class="button delete" data-no="' + i + '" data-idx="' + item['idx'] + '">삭제</span>\n'
+                    + '</div>\n'
+                    + '</div>\n';
+                }
+            }
+            else {
+                str += "작성된 댓글이 없습니다.";
+            }
+
+            $(".comment-read").html(str);
         });
     });
 }
 
 function loadRecord(no) {
     var item = dataset.item(no);
-    $("#username").val((item['username']).toString());
-    $("#content").val((item['content']).toString());
+    $("#post-new-title").val((item['title']).toString());
+    $("#post-new-name").val((item['username']).toString());
+    $("#post-new-content").val((item['content']).toString());
 }
 
 
 function loadAndReset() {
-    resetForm();
+    resetPost();
     selectPostList();
 }
 
-function resetForm() {
-    $("#username").val("");
-    $("#content").val("");
+function resetPost() {
+    $("#post-new-title").val("");
+    $("#post-new-name").val("");
+    $("#post-new-content").val("");
+}
+
+function resetComment() {
+    $("#post-comment-name").val("");
+    $("#post-comment-content").val("");
+}
+
+//.post-new .post-list .post-read
+function selectForeground(section) {
+    $(".mainpage .active").removeClass("active");
+    $(section).addClass("active");
 }
 
 function errorHandler(transaction, error) {
     console.error(error + 'Error: ' + error.message + ' (Code ' + error.code + ')');
 }
 
-function insertTestDB(db) {
+function insertTestDB() {
     systemDB.transaction(function (tx) {
-        tx.executeSql("INSERT INTO tb_post(username, title, content) values('test', '1번째 글입니다.', '1번째 글입니다.')", [], null, errorHandler);
-        tx.executeSql("INSERT INTO tb_post(username, title, content) values('test', '2번째 글입니다.', '2번째 글입니다.')", [], null, errorHandler);
-        tx.executeSql("INSERT INTO tb_post(username, title, content) values('test', '3번째 글입니다.', '3번째 글입니다.')", [], null, errorHandler);
+        //tx.executeSql("INSERT INTO tb_post(username, title, content) values('test', '1번째 글입니다.', '1번째 글입니다.')", [], null, errorHandler);
+        //tx.executeSql("INSERT INTO tb_post(username, title, content) values('test', '2번째 글입니다.', '2번째 글입니다.')", [], null, errorHandler);
+        //tx.executeSql("INSERT INTO tb_post(username, title, content) values('test', '3번째 글입니다.', '3번째 글입니다.')", [], null, errorHandler);
+
+        tx.executeSql("INSERT INTO tb_comment(username, content, postid) values('test', '1번째 글입니다.', 7)", [], null, errorHandler);
+        tx.executeSql("INSERT INTO tb_comment(username, content, postid) values('test', '2번째 글입니다.', 8)", [], null, errorHandler);
+        tx.executeSql("INSERT INTO tb_comment(username, content, postid) values('test', '3번째 글입니다.', 9)", [], null, errorHandler);
     });
 }
