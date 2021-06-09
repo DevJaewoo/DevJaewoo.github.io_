@@ -23,6 +23,9 @@ a {
 
 span {
     display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 input, textarea{
@@ -140,46 +143,49 @@ body {
     display: flex;
 }
 
-.post-list .post-title {
-    cursor: pointer;
-}
-
 .post {
     width: 90%;
     height: 30px;
     border: 1px solid #000000;
 }
 
-.post.header {
+.post-header {
+    width: 90%;
+    padding: 5px 0;
     border: 1px solid #000000;
     background-color: #BBBBBB;
 }
 
-.post.header span {
+.post-header span {
     font-weight: bold;
 }
 
-.post .num {
+.post-read {
+    width: 100%;
+}
+
+.post-list .num {
     width: 70px;
 }
 
-.post .title {
+.post-list .title {
     flex-grow: 1;
     font-weight: bold;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    cursor: pointer;
 }
 
-.post .user {
+.post-list .user {
     width: 100px;
 }
 
-.post .date {
+.post-list .date {
     width: 150px;
 }
 
-.post .control {
+.post-list .control {
     width: 120px;
 }
 
@@ -221,49 +227,50 @@ body {
 }
 
 /* post read */
-.post-read {
+.post-view {
     border: 1px solid #000000;
 }
 
-.post-read-main {
+.post-view-main {
     width: 100%;
     border-bottom: 1px solid #000000;
 }
 
-.post-read-main .header {
+.post-view-main .header {
     width: 100%;
     padding: 15px 0;
     border-bottom: 1px solid #000000;
 }
-.post-read-main span {
+.post-view-main span {
     display: inline-block;
 }
 
-.post-read-main .num {
+.post-view-main .num {
     width: 80px;
 }
 
-.post-read-main .title {
+.post-view-main .title {
     flex-grow: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.post-read-main .user {
+.post-view-main .user {
     width: 200px;
 }
 
-.post-read-main .date {
+.post-view-main .date {
     width: 150px;
 }
 
-.post-read-main .content {
+.post-view-main .content {
     padding: 10px;
     width: calc(100% - 20px);
     min-height: 300px;
     background: #FFFFFF;
     text-align: left;
+    white-space: pre-line;
 }
 
 /* 댓글 */
@@ -307,7 +314,7 @@ body {
     margin: 0 5px;
 }
 
-/* comment-read */
+/* comment-view */
 .comment-read {
     width: 100%;
 }
