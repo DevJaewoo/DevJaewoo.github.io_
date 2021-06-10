@@ -3,13 +3,6 @@ var systemDB;
 $(document).ready(function () {
     initDatabase();
 
-    $(".test").on("click", function() {
-
-        //insertTestDB();
-        //selectCommentList(7);
-    });
-
-
     // 홈으로 이동
     $(".menu .home").on("click", function() {
         resetPost();
@@ -36,7 +29,7 @@ $(document).ready(function () {
         var no = $(this).parent().data("no");
         var idx = $(this).parent().data("idx");
 
-        $(".post-view .num").html(Number(no) + 1);
+        $(".post-view .num").html("번호: " + (Number(no) + 1));
         $(".post-view").data("idx", idx);
         loadPostView();
     });
@@ -374,7 +367,7 @@ function loadPostView() {
             var item = result.rows.item(0);
 
             $(".post-view-main .title").html(item['title']);
-            $(".post-view-main .user").html(item['username']);
+            $(".post-view-main .user").html("작성자:" + item['username']);
             $(".post-view-main .date").html(item['regdate']);
             $(".post-view-main .content").html(item['content']);
         });
@@ -408,7 +401,7 @@ function resetComment() {
     $(".comment-write").data("idx", "-1");
 }
 
-//.post-new .post-list .post-read
+//.post-new .post-list .post-view
 function selectForeground(section) {
     $(".mainpage .active").removeClass("active");
     $(section).addClass("active");
@@ -416,16 +409,4 @@ function selectForeground(section) {
 
 function errorHandler(transaction, error) {
     console.error(error + 'Error: ' + error.message + ' (Code ' + error.code + ')');
-}
-
-function insertTestDB() {
-    systemDB.transaction(function (tx) {
-        //tx.executeSql("INSERT INTO tb_post(username, title, content) values('test', '1번째 글입니다.', '1번째 글입니다.')", [], null, errorHandler);
-        //tx.executeSql("INSERT INTO tb_post(username, title, content) values('test', '2번째 글입니다.', '2번째 글입니다.')", [], null, errorHandler);
-        //tx.executeSql("INSERT INTO tb_post(username, title, content) values('test', '3번째 글입니다.', '3번째 글입니다.')", [], null, errorHandler);
-
-        tx.executeSql("INSERT INTO tb_comment(username, content, postid) values('test', '1번째 글입니다.', 7)", [], null, errorHandler);
-        tx.executeSql("INSERT INTO tb_comment(username, content, postid) values('test', '2번째 글입니다.', 8)", [], null, errorHandler);
-        tx.executeSql("INSERT INTO tb_comment(username, content, postid) values('test', '3번째 글입니다.', 9)", [], null, errorHandler);
-    });
 }
