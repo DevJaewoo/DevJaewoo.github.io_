@@ -57,10 +57,6 @@ section {
     position: relative;
 }
 
-lottie-player {
-    cursor: default;
-}
-
 .portfolio {
     width: 70%;
     height: 100vh;
