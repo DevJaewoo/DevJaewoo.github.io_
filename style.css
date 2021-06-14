@@ -82,6 +82,7 @@ section {
     position: absolute;
     left: 5%;
     bottom: 5%;
+    max-width: 40%;
 }
 
 .content h3 {
@@ -95,6 +96,20 @@ section {
     font-size: 30px;
     font-weight: 400;
     color: #FFFFFF;
+}
+
+section .attribution {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    max-width: 40%;
+}
+
+.attribution, .attribution a {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    line-height: 30px;
 }
 
 /* menu */
@@ -227,6 +242,22 @@ nav .foreground {
     color: #FFFFFF;
 }
 
+@media (max-width: 2000px) {
+
+    .content h3 {
+        font-size: 25px;
+    }
+    
+    .content p {
+        font-size: 20px;
+    }
+
+    .attribution, .attribution a {
+        font-size: 10px;
+        line-height: 20px;
+    }
+}
+
 @media (orientation: portrait) and (max-width: 900px) {
     
     .logo {
@@ -240,14 +271,6 @@ nav .foreground {
     .portfolio, .feedback, .hobby {
         width: 100%;
         height: 100vh;
-    }
-
-    .content h3 {
-        font-size: 30px;
-    }
-    
-    .content p {
-        font-size: 25px;
     }
 
     .menu {
