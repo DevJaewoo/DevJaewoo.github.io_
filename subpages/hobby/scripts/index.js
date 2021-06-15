@@ -69,6 +69,8 @@ $(".category-move.right").on("click", function() {
     var left = parseInt(list.css("left"));
     var len = list.width() - container.width() + left;
 
+    if(len <= 0) return;
+
     console.log("C: " + container.width() + " L: " + list.width());
     console.log("Left: " + left + ", Len: " + len);
 
