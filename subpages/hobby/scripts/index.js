@@ -4,8 +4,7 @@
 // maxres2.jpg
 // maxres3.jpg
 
-// var imgType = ["/hqdefault.jpg", "/hq1.jpg", "/hq2.jpg", "/hq3.jpg"];
- var imgType = ["/maxresdefault.jpg", "/maxres1.jpg", "/maxres2.jpg", "/maxres3.jpg"];
+var imgType = ["/maxresdefault.jpg", "/maxres1.jpg", "/maxres2.jpg", "/maxres3.jpg"];
 var imgIndex = 0;
 var currentImg;
 
@@ -21,13 +20,10 @@ function updateImage(refreshAll = false) {
 
     currentImg = imgType[imgIndex];
     imgIndex = (imgIndex + 1) % 4;
-
-    //console.log(currentImg);
     
     for(var i=0; i<$(img).length; i++)
     {
         currentElement = $(img).eq(i);
-        
 
         elementTop = currentElement.offset().top;
         elementBottom = elementTop + currentElement.outerHeight();
@@ -39,7 +35,6 @@ function updateImage(refreshAll = false) {
 
         if(isInViewport == false && refreshAll == false) continue;
         
-        //console.log(i);
         currentElement.attr("src", "https://img.youtube.com/vi/" + currentElement.attr("vid") + currentImg);
     }
 }
@@ -52,23 +47,19 @@ $(".category-info").on("click", function() {
     $(this).parent().toggleClass("hide");
     if($(this).parent().hasClass("hide")) {
         $(this).parent().css("height", "40px");
-        //$(this).next().slideUp(200);
     }
     else {
         $(this).parent().css("height", "265px");
-        //$(this).next().slideDown(200);
     }
 });
 
 $(".category-move.left").on("click", function() {
-    var container = $(this).parent();
     var list = $(this).siblings(".category-list");
 
     var left = parseInt(list.css("left"));
     left += (left <= -400) ? 400 : -left;
 
     list.animate({left: (left + "px")});
-    //list.css("left", left + "px");
 });
 
 $(".category-move.right").on("click", function() {
@@ -83,7 +74,6 @@ $(".category-move.right").on("click", function() {
 
     left -= (len >= 400) ? 400 : len;
     list.animate({left: (left + "px")});
-    //list.css("left", left + "px");
 });
 
 $("nav .menu-item").on("click", function () {
@@ -131,7 +121,6 @@ function highlightLink(anchor) {
     var element = $("nav").find("[dest='" + anchor + "']");
 	var color = $("#" + anchor + " .category-info").css("background-color");
 
-    //console.log(color);
     element.addClass("active");
     element.css("color", color);
 }
