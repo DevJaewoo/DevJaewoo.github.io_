@@ -323,6 +323,7 @@ function selectCommentList() {
 }
 
 function loadPostNew() {
+    resetPost();
     $(".post-new").data("idx", "-1");
     selectForeground(".post-new");
 }
@@ -340,7 +341,7 @@ function loadPostEdit() {
 
             selectForeground(".post-new");
         });
-    })
+    });
 }
 
 function loadCommentEdit() {
@@ -353,7 +354,7 @@ function loadCommentEdit() {
             $("#post-comment-name").val((item['username']).toString());
             $("#post-comment-content").val((item['content']).toString());
         });
-    })
+    });
 }
 
 function loadPostView() {
